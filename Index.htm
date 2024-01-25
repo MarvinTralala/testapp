@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Conditioneel formulier</title>
+	<!-- 
+	hopelijk heb je hier wat aan Matz! :)
+	
+	1. sla deze tekst op als iets.htm
+	2. open bestand met een browser
+	3. vul een getal in het numerieke veld in, wanneer groter dan 1, zal de 'div' met id "extraDeel" weergegeven worden.
+	4. Pas de conditionele voorwaarde aan indien nodig
+	
+	met CSS kun je het geheel opmaken maar gedrag op basis van de waarde kan alleen met javascript.
+	 -->
+</head>
+<body>
+
+	<form id="aanmelding">
+		Aantal personen:
+		<input type="number" id="aantalPersonen" name="numOfPeople" value=1>
+		<div id="extraDeel" style="display: none;">
+			<!-- Inhoud die je conditioneel wilt tonen -->
+			Mooi je krijgt 20% korting op je 2e massage!
+		</div>
+	</form>
+	
+	<script>	
+		document.getElementById('aantalPersonen').addEventListener('input', function() {
+			var waarde = this.value;
+			if (waarde > 1) //<-- Conditionele voorwaarde
+			{
+				document.getElementById('extraDeel').style.display = 'block';
+			} else {
+				document.getElementById('extraDeel').style.display = 'none';
+			}
+		});
+	</script>
+</body>
+</html>
